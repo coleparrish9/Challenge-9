@@ -8,19 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+"
+    "url": "git+https://github.com/coleparrish9/Challenge-9"
   },
   "keywords": [
     "node.js",
     "javascript",
     "readme.md"
   ],
-  "author": "",
+  "author": "Cole-Parrish-9",
   "license": "MIT",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/coleparrish9"
   },
-  "homepage": "",
+  "homepage": "https://github.com/coleparrish9",
   "dependencies": {
     "inquirer": "^8.2.4"
   }
