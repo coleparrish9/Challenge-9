@@ -4,16 +4,17 @@
 ## Description 
 
   test
-  
+
 ## Table of contents
 
   test
 
 ## Usage
 
-  'test
+  test
 
 ## Contributions
+
   test
 
 ## Testing
@@ -21,8 +22,8 @@
 
 ## Questions
   Contact if you have any questions about the functionality of the app or installation
-  [GitHub](https://github.com/test)
-  [Email](mailto:test)
+  [GitHub](https://github.com/coleparrish9)
+  [Email](mailto:coleparrish9@gmail.com)
 
 ## License
 [MIT License](https://choosealicense.com/licenses/mit/)

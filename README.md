@@ -8,7 +8,9 @@
   NPM I then node index.js
 
 ## Usage
-  NPM I then nose index.js
+AS A developer
+I WANT a README generator
+SO THAT I can quickly create a professional README for a new project
 
 ## Contributions
   Cole Parrish
