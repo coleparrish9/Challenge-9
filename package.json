@@ -1,0 +1,27 @@
+{
+  "name": "challenge-9-readme-generator",
+  "version": "1.0.0",
+  "description": "node.js application used to generate project readme files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+"
+  },
+  "keywords": [
+    "node.js",
+    "javascript",
+    "readme.md"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
