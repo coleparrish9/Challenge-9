@@ -51,7 +51,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((data)=>
     {
-        writeToFile('./README_generated/README_Generated.md', generateMarkdown(data))
+        writeToFile('./readme_generated/README_Generated.md',generateMarkdown(data))
     });
 }
 

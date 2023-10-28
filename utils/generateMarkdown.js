@@ -1,104 +1,96 @@
 function renderLicenseBadge(license) {
-  const badgeLink = `[![License](https://img.shields.io/badge/`
+  if (license === 'mit') {
+    const mit = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
+    return mit
+  } else if (license === 'mozilla'){
+    const mozilla = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`
+    return mozilla
+  } else if (license === 'apache'){
+    const apache = `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
+    return apache
+  } else {
+    return '';
 
-  switch(license) {
-    case 'No License':
-      return '';
-    case 'Apache 2.0':
-      return badgeLink + 'License-Apache_2.0-blue.svg)]' + '(https://opensource.org/licenses/Apache-2.0)';
-    case 'GPLv2':
-      return badgeLink + 'License-GPL_v2-blue.svg)]' + '(https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)';
-    case 'GNU GPLv3':
-      return badgeLink + 'License-GPLv3-blue.svg)]' + '(https://www.gnu.org/licenses/gpl-3.0)';
-    case 'MIT':
-      return badgeLink + 'License-MIT-yellow.svg)]' + '(https://opensource.org/licenses/MIT)';
-    case 'ISC':
-      return badgeLink + 'License-ISC-blue.svg)]' + '(https://opensource.org/licenses/ISC)';
   }
 }
+
 function renderLicenseLink(license) {
-  const licenseLink = 'https://choosealicense.com/licenses/';
-
-  switch(license) {
-    case 'No License':
-      return '';
-    case 'Apache 2.0':
-      return licenseLink + 'apache-2.0/';
-    case 'GPLv2':
-      return licenseLink + 'gpl-2.0/';
-    case 'GNU GPLv3':
-      return licenseLink + 'gpl-3.0/';
-    case 'MIT':
-      return licenseLink + 'mit/';
-    case 'ISC':
-      return licenseLink + 'isc/';
+  if (license === 'none') {
+    return '';
+  }
+  if (license === 'mit') {
+    const mit = `https://choosealicense.com/licenses/mit/`
+    return mit
+  } else if (license === 'mozilla'){
+    const mozilla = `https://choosealicense.com/licenses/mpl-2.0/`
+    return mozilla
+  } else if (license === 'apache'){
+    const apache = `https://www.apache.org/licenses/LICENSE-2.0`
+    return apache
   }
 }
-
 
 function renderLicenseSection(license) {
-const licenseLink = renderLicenseLink(license);
-
-  if (license === 'No License') {
-    return `This project is not licensed`;
-  } else {
-      return `This project is licensed under the [${license}](${licenseLink}) license`
+  if (license === 'none') {
+    return '';
   }
+  if (license === 'mit') {
+    const mit = `MIT License`
+    return mit
+  } else if (license === 'mozilla'){
+    const mozilla = `Mozilla Public License 2.0`
+    return mozilla
+  } else if (license === 'apache'){
+    const apache = `Apache License 2.0`
+    return apache
+  }
+
 }
+  
 
 function generateMarkdown(data) {
-  const licenseSection = renderLicenseSection(data.license);
-  const licenseBadge = renderLicenseBadge(data.license);
+  const link =  renderLicenseLink(data.license)
+  const license_section = renderLicenseSection(data.license)
+  const badge = renderLicenseBadge(data.license)
 
+  let license_section_copy = `[${license_section}](${link})
 
-  let tableOfContents = `
-  - [Description](#description)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [Credits](#credits)
-  - [License](#license)
-  - [Questions](#questions)`
-  
+  The license used for this application is ${license_section} which can be found at the [here](${link})`
+
+  if (!license_section || !link) {
+    license_section_copy = "There is no license for this project"
+  }
+
   return `# ${data.title}
-${licenseBadge}
+${badge}
 
-## Description
+## Description 
 
-${data.description}
+  ${data.description}
 
-## Table of Contents
+## Table of contents
 
-${tableOfContents}
-
-## Installation
-
-${data.installation}
+  ${data.installation}
 
 ## Usage
 
-${data.usage}
+  ${data.usage}
 
-## Contributing
+## Contributions
 
-${data.contributing}
+  ${data.contribution}
 
-## Tests
-
-${data.tests}
-
-## Credits
-
-${data.credits}
-
-## License
-
-${licenseSection}
+## Testing
+  ${data.test}
 
 ## Questions
+  Contact if you have any questions about the functionality of the app or installation
+  [GitHub](https://github.com/${data.github})
+  [Email](mailto:${data.email})
 
-If you have any questions about functionality or installation, I can be reached at ${data.email} or visit my GitHub page at [${data.github}](https://github.com/${data.github}).
-
+## License
+${license_section_copy}
 `;
 }
+
+module.exports = generateMarkdown
