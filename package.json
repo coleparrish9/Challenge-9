@@ -1,26 +1,13 @@
 {
-  "name": "challenge-9-readme-generator",
+  "name": "static-site",
   "version": "1.0.0",
-  "description": "node.js application used to generate project readme files",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/coleparrish9/Challenge-9"
-  },
-  "keywords": [
-    "node.js",
-    "javascript",
-    "readme.md"
-  ],
-  "author": "Cole-Parrish-9",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/coleparrish9"
-  },
-  "homepage": "https://github.com/coleparrish9",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "inquirer": "^8.2.4"
   }
