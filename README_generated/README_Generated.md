@@ -1,24 +1,24 @@
-# test
+# Track-A-Ployee
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description 
 
-  test
+  A employee tracker using mysql.
 
 ## Table of contents
 
-  test
+  clone and run npm i then node index.js
 
 ## Usage
 
-  test
+  
 
 ## Contributions
 
-  test
+  
 
 ## Testing
-  test
+  
 
 ## Questions
   Contact if you have any questions about the functionality of the app or installation
